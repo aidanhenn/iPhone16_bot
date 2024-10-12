@@ -40,17 +40,17 @@ async function shipping(page){
     await smart_click_with_pause(page, "button[data-autom='guest-checkout-btn']", 0) 
     await smart_click_with_pause(page, "[id='rs-checkout-continue-button-bottom']", 0)     
 
-    await smart_type(page,"input[name='firstName']",'Aidan')
-    await smart_type(page,"input[name='lastName']",'Hennessy')
-    await smart_type(page,"input[name='street']",'7 Indian Hill Dr')
+    await smart_type(page,"input[name='firstName']",'John')
+    await smart_type(page,"input[name='lastName']",'Doe')
+    await smart_type(page,"input[name='street']",'1 Strawberry Fields')
     // clear old postal code
     //await clearSelector(page,"input[name='postalCode']")
     const input = await page.$("input[name='postalCode']")
     await input.click({clickCount:3})
-    await input.type('06035')
+    await input.type('12345')
     // Step 3: Type the new value into the field
-    await smart_type(page,"input[name='emailAddress']",'aidanjhennessy@gmail.com')
-    await smart_type(page,"input[name='fullDaytimePhone']",'8609705480')
+    await smart_type(page,"input[name='emailAddress']",'johndoe@gmail.com')
+    await smart_type(page,"input[name='fullDaytimePhone']",'1234567890')
     await smart_click_with_pause(page, "button[data-autom='shipping-continue-button']", 0)    
 }
 
